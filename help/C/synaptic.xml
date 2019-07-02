@@ -411,6 +411,16 @@
 			</varlistentry>
 			<varlistentry>
 				<term>
+					Quick filter
+				</term>
+				<listitem>
+					<para>
+						Quick package search.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>
 					Properties
 				</term>
 				<listitem>
@@ -425,7 +435,7 @@
 				</term>
 				<listitem>
 					<para>
-						Open the package search dialog.
+						Open detailed package search dialog.
 					</para>
 				</listitem>
 			</varlistentry>

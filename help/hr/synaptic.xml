@@ -22,8 +22,8 @@
 	<!-- translators: uncomment this: -->
 
 <copyright>
-	<year>2016</year>
-	<holder>gogo <email>trebelnik2@gmail.com</email> (hrvatski prijevod)</holder>
+	<year>2016-2019</year>
+	<holder>gogo <email>linux.hr@protonmail.com</email> (hrvatski prijevod)</holder>
 </copyright>
 
 
@@ -414,6 +414,16 @@
 			</varlistentry>
 			<varlistentry>
 				<term>
+					Brza pretraga
+				</term>
+				<listitem>
+					<para>
+						Brzo pretraživanje paketa.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>
 					Svojstva
 				</term>
 				<listitem>
@@ -428,7 +438,7 @@
 				</term>
 				<listitem>
 					<para>
-						Otvara dijalog pretraživanja paketa.
+						Otvara dijalog opširnijeg pretraživanja paketa.
 					</para>
 				</listitem>
 			</varlistentry>
