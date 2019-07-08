@@ -1,11 +1,10 @@
-<?xml version="1.0"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
-"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY legal SYSTEM "gpl.xml">
 <!ENTITY appversion "0.53">
 <!ENTITY app "<application>Synaptic upravitelj paketima</application>">
 <!ENTITY manrevision "0.1">
-<!ENTITY date "Travanj 2016">
+<!ENTITY date "Srpanj 2019">
 ]>
 <!-- =============Document Header ============================= -->
 <article id="index" lang="hr">
@@ -16,17 +15,17 @@
 
 <copyright> 
 	<year>2003,2004</year> 
-	<holder>Sebastian Heinlein (autor)</holder> 
+	<holder>Sebastian Heinlein</holder> 
 </copyright>
 
-	<!-- translators: uncomment this: -->
+	<!-- translators: uncomment this:
 
 <copyright>
-	<year>2016-2019</year>
-	<holder>gogo <email>linux.hr@protonmail.com</email> (hrvatski prijevod)</holder>
+	<year>2016</year>
+	<holder>gogo <email>trebelnik2@gmail.com</email> (hrvatski prijevod)</holder>
 </copyright>
 
-
+-->
 
 <authorgroup> 
 	<author> 
@@ -35,33 +34,16 @@
 	</author>
 </authorgroup>
 
-<releaseinfo>
-	Ovaj priručnik opisuje rukovanje &appversion; 
-	Synaptic upraviteljem paketima.
-</releaseinfo> 
+<releaseinfo>Ovaj priručnik opisuje korištenje Synaptic upravitelja paketima inačice 0.53.</releaseinfo> 
 
 <legalnotice>
-	<title>Pravne napomene</title>	
-	<para> 
-		Ovaj dokument je distribuiran pod uvjetima GNU
-		Opće Javne Licence objavljene od strane Fondacije 
-		slobodnog softvera; ili inačice 2 licence, ili 
-		(po vašem mišljenju) novije inačice. Kopija ove 
-		licence se može pronaći u datoteci uključenoj
-		u izvorni kôd programa. 
-	</para>
+	<title>Pravni savjeti</title>	
+	<para>Ovaj dokument je distribuiran pod uvjetima GNU Opće Javne Licence objavljene od strane Fundacije slobodnog softvera; inačice 2 licence, ili (po vašem mišljenju) svake novije inačice. Kopija licence se može pronaći u datoteci uključenoj u izvorni kôd ovog programa.</para>
 </legalnotice>
 
 <legalnotice> 
 	<title>Povratne informacije</title>
-	<para>
-		Za prijavu greške ili prijedloga za 
-		&app; ili ovog priručnika, koristite sustav za prijavu 
-		grešaka na <ulink url="http://www.nongnu.org/synaptic" 
-		type="http">Synaptic web stranici</ulink>, kontaktirajte 
-		mailing listu <email>synaptic-devel@nongnu.org</email>
-		pridružite se IRC kanalu #synaptic na irc.freenode.org.
-	</para>
+	<para>Za prijavu greške ili prijedloga za  <application>Synaptic upravitelja paketima</application> ili ovog priručnika, koristite sustav za prijavu grešaka na <ulink url="http://www.nongnu.org/synaptic" type="http">Synaptic web</ulink>, kontaktirajte mailing listu <email>synaptic-devel@nongnu.org</email> pridružite se IRC kanalu #synaptic na irc.freenode.org.</para>
 	<!-- Translators may also add here feedback address for translation -->
 
 </legalnotice> 
@@ -79,186 +61,90 @@
 
 <sect1 id="synaptic-introduction"> 
 	<title>Uvod</title> 
-	<para>
-		&app; omogućuje vam instalaciju i upravljanje instaliranim softverom na vašem računalu. 
-		Softver se isporučuje pomoću tzv. <emphasis>paketa</emphasis>. Jedna aplikacija može
-		postojati u nekoliko paketa: npr. <application>Mozilla Internet Suite</application> je
-		pakirana u <emphasis>mozilla-browser</emphasis>, koja sadrži preglednik, i <emphasis>mozilla-mail
-		</emphasis>, koja sadrži klijent za poštu (ovaj primjer se odnosi na Debian GNU/Linux 
-		 i može biti drugačija zavisno o vašoj distribuciji). 
-	</para>
-	<para>
-		Gotovo sve aplikacije ponovno koriste funkcionalnost drugih aplikacija ili biblioteka 
-		(biblioteke samo pružaju funkcije ostalim bibliotekama ili aplikacijama i nisu zasebne aplikacije)
-		kako bi izbjegle dvostruke radnje. Stoga većina paketa ovisi o drugim paketima. &app; automatski razrješava <emphasis>
-		zavisnosti</emphasis> umjesto vas. 
-	</para>
-	<para>
-		Tehnički &app; je temeljen na paketnom upravitelju <application>APT</application> i pruža funkcije, koje su slične 
-		onima u alatu naredbenog redka <command>apt-get</command> u grafičkom okruženju.
-	</para>
-	<para>
-		Opširnije &app; pruža sljedeće značajke: 
-
-	        <itemizedlist>
+	<para><application>Synaptic upravitelj paketima</application> omogućuje vam instalaciju i upravljanje instaliranim softverom na vašem računalu. Softver se isporučuje pomoću tzv. <emphasis>paketima</emphasis>. Jedna aplikacija može postojati u nekoliko paketa: npr. <application>Mozilla Internet Suite</application> je pakirana u <emphasis>mozilla-browser</emphasis>, koja sadrži preglednik, i <emphasis>mozilla-mail </emphasis>, koja sadrži klijent za poštu (ovaj primjer se odnosi na Debian GNU/Linux i može biti drugačija zavisno o vašoj distribuciji).</para>
+	<para>Gotovo sve aplikacije ponovno koriste funkcionalnost drugih aplikacija ili biblioteka (biblioteke samo pružaju funkcije ostalim bibliotekama ili aplikacijama i nisu zasebne aplikacije) kako bi izbjegle dvostruke radnje. Stoga većina paketa ovisi o drugim paketima. <application>Synaptic upravitelj paketima</application> automatski razrješava <emphasis> zavisnosti</emphasis> umjesto vas.</para>
+	<para>Tehnički <application>Synaptic upravitelj paketima</application> je temeljen na paketnom upravitelju <application>APT</application> i pruža funkcije, koje su slične onima u alatu naredbenog redka <command>apt-get</command> u grafičkom okruženju.</para>
+	<para>Opširnije <application>Synaptic upravitelj paketima</application> pruža sljedeće značajke: <itemizedlist>
 		        <listitem>
-			        <para>
-				        Instalacija, uklanjanje, podešavanja, nadogradnja i vraćanje prijašnje inačice jednoga ili više paketa.
-	                        </para>
+			        <para>Instalacija, uklanjanje, podešavanja, nadogradnja i vraćanje prijašnje inačice jednoga ili više paketa.</para>
 		        </listitem>
 			<listitem>
-				<para>
-					Potpuna nadogradnja vašeg sustava.
-	                        </para>
+				<para>Potpuna nadogradnja vašeg sustava.</para>
 		        </listitem>
 			<listitem>
-				<para>
-	                                Upravljanje paketnim repozitorijima.
-		                </para>
+				<para>Upravljanje paketnim repozitorijima.</para>
 	                </listitem>
 		        <listitem>
-			        <para>
-				        Pretraživanje paketa prema nazivu, opisu i nekoliko ostalih svojstava.
-	                        </para>
+			        <para>Pretraživanje paketa prema nazivu, opisu i nekoliko ostalih svojstava.</para>
 		        </listitem>
 			<listitem>
-				<para>
-					Odabir paketa prema stanju, odjeljku, nazivu ili prilagođenom filteru.
-	                        </para>
+				<para>Odabir paketa prema stanju, odjeljku, nazivu ili prilagođenom filteru.</para>
 		        </listitem>
 			<listitem>
-				<para>
-	                                 Razvrstavanje paketa prema nazivu, stanju, veličini ili inačici.
-		                </para>
+				<para>Razvrstavanje paketa prema nazivu, stanju, veličini ili inačici.</para>
 			</listitem>
 	                <listitem>
-		                <para>
-			                Pregledavanje sve dostupne dokumentacije s interneta povezane s paketom.
-				</para>
+		                <para>Pregledavanje sve dostupne dokumentacije s interneta povezane s paketom.</para>
 	                </listitem>
 	                <listitem>
-		                <para>
-			                Zaključavanje paketa na trenutnu inačicu.
-				</para>
+		                <para>Zaključavanje paketa na trenutnu inačicu.</para>
 	                </listitem>
 	                <listitem>
-		                <para>
-			                Odabir instalacije određene inačice paketa.
-				</para>
+		                <para>Odabir instalacije određene inačice paketa.</para>
 	                </listitem>
-		</itemizedlist>
-	</para>
+		</itemizedlist></para>
 	<note>
-		<para>
-			Potrebne su vam korijenske ovlasti za instalaciju ili uklanjanje paketa softvera na vašem računalu.
-		</para>
+		<para>Potrebne su vam korijenske ovlasti za instalaciju ili uklanjanje paketa softvera na vašem računalu.</para>
 	</note>
 
-	<para>
-		Možete pokrenuti <application>&app;</application> na 
-		sljedeće načine:
-
-	<variablelist>
+	<para>Može pokrenuti  <application><application>Synaptic upravitelj paketima</application></application> na sljedeće načine: <variablelist>
 		<varlistentry>
-			<term>
-				U <guimenu>Cinnamon</guimenu> izborniku
-			</term>
+			<term>U <guimenu>Cinnamon</guimenu> izborniku</term>
 			<listitem>
-				<para>
-					Odaberite 
-					<menuchoice>
-					<guisubmenu>Administracija</guisubmenu>
-					<guimenuitem>Synaptic upravitelj paketa</guimenuitem>
-					</menuchoice>. 
-				</para>
+				<para>Odaberite <menuchoice><guisubmenu>Administracija</guisubmenu><guimenuitem>Synaptic upravitelj paketa</guimenuitem></menuchoice>.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>U <guimenu>GNOME 3</guimenu> izborniku</term>
+			<listitem>
+				<para>Odaberite <menuchoice><guisubmenu>Prikaži aplikacije</guisubmenu><guisubmenu>Sve</guisubmenu><guimenuitem>Synaptic upravitelj paketa</guimenuitem></menuchoice>.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>U <guimenu>GNOME 2</guimenu> Aplikacije izborniku</term>
+			<listitem>
+				<para>Odaberite <menuchoice><guisubmenu>Alati sustava</guisubmenu><guimenuitem>Synaptic upravitelj paketima</guimenuitem></menuchoice>.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
 			<term>
-				U <guimenu>GNOME 3</guimenu> Aktivnosti izborniku
+				<guimenu>U KDE izborniku</guimenu>
 			</term>
 			<listitem>
-				<para>
-					Odaberite 
-					<menuchoice>
-					<guisubmenu>Prikaži aplikacije</guisubmenu>
-					<guisubmenu>Sve</guisubmenu>
-					<guimenuitem>Synaptic upravitelj paketa</guimenuitem>
-					</menuchoice>. 
-				</para>
+				<para>Odaberite <menuchoice><guisubmenu>Postavke</guisubmenu><guisubmenu>Dodatno</guisubmenu><guimenuitem>Synaptic upravitelj paketima</guimenuitem></menuchoice>.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
-			<term>
-				U <guimenu>GNOME 2</guimenu> Aplikacije izborniku
-			</term>
+			<term>U <guimenu>Mate</guimenu> Aplikacije izborniku</term>
 			<listitem>
-				<para>
-					Odaberite 
-					<menuchoice>
-					<guisubmenu>Alati sustava</guisubmenu>
-					<guimenuitem>Synaptic upravitelj paketa</guimenuitem>
-					</menuchoice>. 
-				</para>
-			</listitem>
-		</varlistentry>
-		<varlistentry>
-			<term>
-				U <guimenu>KDE</guimenu> izborniku
-			</term>
-			<listitem>
-				<para>
-					Odaberite 
-					<menuchoice>
-					<guisubmenu>Postavke</guisubmenu>
-					<guisubmenu>Dodatno</guisubmenu>
-					<guimenuitem>Synaptic upravitelj paketa</guimenuitem>
-					</menuchoice>. 
-				</para>
-			</listitem>
-		</varlistentry>
-		<varlistentry>
-			<term>
-				U <guimenu>Mate</guimenu> Aplikacije izborniku
-			</term>
-			<listitem>
-				<para>
-					Odaberite 
-					<menuchoice>
-					<guisubmenu>Alati sustava</guisubmenu>
-					<guimenuitem>Synaptic upravitelj paketa</guimenuitem>
-					</menuchoice>. 
-				</para>
+				<para>Odaberite <menuchoice><guisubmenu>Alati sustava</guisubmenu><guimenuitem>Synaptic upravitelj paketima</guimenuitem></menuchoice>.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
 			<term>U naredbenom redku</term>
 			<listitem>
-				<para>
-					Za pokretanje <application>&app;
-					</application> iz naredbenog redka upišite:
-				</para>
-				<para>
+				<para>Za pokretanje <application><application>Synaptic upravitelj paketima</application></application>iz naredbenog redka upišite sljedeće , zatim pritisnite <keycap>Return</keycap>:</para>
+				<para> 
 					<command>synaptic</command> 
-				</para>
-				<para>
-					Zatim pritisnite tipku <keycap>Return</keycap>
-				</para>
+				</para> 
 			</listitem>
 		</varlistentry>
-	</variablelist>
-	</para> 
+	</variablelist></para> 
 
 	<caution>
-		<para>
-			Synapticom možete učiniti vaš sustav neupotrebljivim.
-		</para>
-		<para>
-			Synaptic vam omogućuje izvođenje promjena na jezgri vašeg sustava.
-		</para>
-		<para>
-			Uvijek koristite &app; s oprezom.
-		</para>
+		<para>Možete učiniti vaš sustav neupotrebljivim.</para>
+		<para>Synaptic vam omogućuje izvođenje promjena na jezgri vašeg sustava.</para>
+		<para>Uvijek koristite <application>Synaptic upravitelj paketima</application> s oprezom.</para>
 	</caution>
 
 </sect1>
@@ -268,90 +154,57 @@
 
 <sect2 id="synaptic-win-overview">
 	<title>Pogled</title>
-	<para>
-		Kada pokrenete <application>&app;</application>, 
-		sljedeći prozor se prikaže.
-	</para>
+	<para>Kada pokrenete <application><application>Synaptic upravitelj paketima</application></application>, sljedeći prozor se prikaže.</para>
 
 	<figure id="mainwindow-fig"> 
-		<title>&app; početni prozor</title> 
+		<title><application>Synaptic upravitelj paketima</application> početni prozor</title> 
 		<screenshot> 
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="figures/synaptic-start.png" 
-					format="PNG"/> 
+					<imagedata fileref="figures/synaptic-start.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-					Prikazuje glavni prozor &app;. Sadrži naslovnu traku, 
-					traku izbornika, alatnu traku, područje prikaza
-					i klizne trake. Traka izbornika sadrži Datoteke, 
-					Pogled, Postavke i Pomoć izbornike. 
-					</phrase> 
+					<phrase>Prikazuje glavni prozor <application>Synaptic upravitelja paketima</application>. Sadrži naslovnu traku, traku izbornika, alatnu traku, područje prikaza i klizne trake. Traka izbornika sadrži Datoteke, Pogled, Postavke i Pomoć izbornike.</phrase> 
 				</textobject> 
 			  </mediaobject> 
 		</screenshot> 
 	</figure>
 
 	<table frame="topbot" id="table-synaptic-main">
-		<title>Komponente prozora &app;</title>
+		<title><application>Synaptic upravitelj paketima</application> komponente prozora</title>
 		<tgroup cols="2" colsep="0" rowsep="0">
 			<colspec colname="COLSPEC0" colwidth="30*"/>
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<thead>
 				<row rowsep="1">
-					<entry valign="top" align="left">
-						Komponenta
-					</entry>
-					<entry valign="top" align="left">
-						Opis
-					</entry>
+					<entry valign="top" align="left">Komponenta</entry>
+					<entry valign="top" align="left">Opis</entry>
 				</row>
 			</thead>
 			<tbody>
 				<row>
-					<entry valign="top">
-						Traka izbornika
-					</entry>
-					<entry valign="top">
-						Sadrži izbornike koje možete koristiti za obavljanje radnji
-						u &app;.
-					</entry>
+					<entry valign="top">Traka izbornika</entry>
+					<entry valign="top">Sadrži izbornike koje možete koristiti za obavljanje radnji u <application>Synaptic upravitelju paketima</application>.</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Alatna traka
-					</entry>
-					<entry valign="top">
-						Omogućuje glavne radnje.
-					</entry>
+					<entry valign="top">Alatna traka</entry>
+					<entry valign="top">Omogućuje glavne radnje.</entry>
 				</row>
 				<row>
 					<entry valign="top">Odabiratelj kategorija</entry>
-					<entry valign="top">
-						Omogućuje kategorije za sužavanje popisa
-						prikazanih paketa.
-					</entry>
+					<entry valign="top">Omogućuje kategorije za sužavanje popisa prikazanih paketa.</entry>
 				</row>
 				<row>
 					<entry valign="top">Popis paketa</entry>
-					<entry valign="top">
-						Prikazuje poznate pakete. Popis se može
-						suziti korištenjem filtra i kategorija.
-					</entry>
+					<entry valign="top">Prikazuje poznate pakete. Popis se može suziti korištenjem filtra i kategorija.</entry>
 				</row>
 				<row>
 					<entry valign="top">Polje opisa</entry>
-					<entry valign="top">
-						Prikazuje opis odabranog paketa.
-					</entry>
+					<entry valign="top">Prikazuje opis odabranog paketa</entry>
 				</row>
 				<row>
 					<entry valign="top">Statusna traka</entry>
-					<entry valign="top">
-						Prikazuje opće informacije o stanju  
-						&app;.
-					</entry>
+					<entry valign="top">Prikazuje opće informacije o stanju <application>Synaptic upravitelj paketima</application>.</entry>
 				</row>
 			</tbody>
 		</tgroup>
@@ -362,254 +215,157 @@
 	<title>Alatna traka</title>
 	
 	<figure>
-		<title>Alatna traka &app;</title> 
+		<title>Alatna traka <application>Synaptic upravitelj paketima</application></title> 
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-toolbar.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-toolbar.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje alatnu traku glavnog prozora &app;
-					</phrase>
+					<phrase>Prikazuje alatnu traku glavnog prozora <application>Synaptic upravitelj paketima</application></phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
 	</figure>
 
-	<para>
-		Alatna traka omogućuje sljedeće radnje:
-	
-		<variablelist>
+	<para>Alatna traka omogućuje sljedeće radnje: <variablelist>
 			<varlistentry>
-				<term>
-					Osvježi
-				</term>
+				<term>Osvježi</term>
 				<listitem>
-					<para>
-						Osvježava popis poznatih paketa.
-					</para>
+					<para>Osvježava popis poznatih paketa.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Odaberi sve nadogradnje
-				</term>
+				<term>Odabire sve nadogradnje</term>
 				<listitem>
-					<para>
-						Odabire sve moguće i dostupne nadogradnje.
-					</para>
+					<para>Odabire sve moguće i dostupne nadogradnje.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Primijeni
-				</term>
+				<term>Primijeni</term>
 				<listitem>
-					<para>
-						Primijenjuje sve odabrane promjene.
-					</para>
+					<para>Primijenjuje sve odabrane promjene.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Brza pretraga
-				</term>
+				<term>Svojstva</term>
 				<listitem>
-					<para>
-						Brzo pretraživanje paketa.
-					</para>
+					<para>Otvara dijalog <xref linkend="synaptic-win-properties"/> odabranog paketa.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Svojstva
-				</term>
+				<term>Pretraži</term>
 				<listitem>
-					<para>
-						Otvara dijalog <xref linkend="synaptic-win-properties"/> odabranog paketa.
-					</para>
+					<para>Otvara dijalog pretraživanja paketa.</para>
 				</listitem>
 			</varlistentry>
-			<varlistentry>
-				<term>
-					Pretraži
-				</term>
-				<listitem>
-					<para>
-						Otvara dijalog opširnijeg pretraživanja paketa.
-					</para>
-				</listitem>
-			</varlistentry>
-		</variablelist>
-	</para>
+		</variablelist></para>
 </sect2>
 
-<sect2 id="synaptic-win-selector" xreflabel="odabiratelj kategorija">
+<sect2 id="synaptic-win-selector" xreflabel="category selector">
 	<title>Odabiratelj kategorija</title>
 	
-	<para>
-		Odabiratelj na lijevoj strani omogućuje vam suziti odabir paketa, koji su prikazani u <xref linkend="synaptic-win-list"/>
-		prema kategorijama.
-	</para>
+	<para>Odabiratelj na lijevoj strani omogućuje vam suziti odabir paketa, koji su prikazani u <xref linkend="synaptic-win-list"/> prema kategorijama.</para>
 
 	<figure>
 		<title>Odabiratelj kategorija</title> 
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-categories.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-categories.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje odabiratelja paketa u glavnom prozoru &app;.
-					</phrase>
+					<phrase>Prikazuje odabiratelja paketa u glavnom prozoru <application>Synaptic upravitelja paketima</application>.</phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
 	</figure>
 
-	<para>
-		Sljedeće kategorije su dostupne:
-		
-		<variablelist>
+	<para>Sljedeće kategorije su dostupne: <variablelist>
 			<varlistentry>
-				<term>
-					Odjeljci
-				</term>
+				<term>Odjeljci</term>
 				<listitem>
-					<para>
-						Prikazuju se samo pripadajući 
-						paketi odabranog odjeljka.
-					</para>
+					<para>Prikazuju se samo pripadajući paketi odabranog odjeljka.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Stanje
-				</term>
+				<term>Stanje</term>
 				<listitem>
-					<para>
-						Prikazuje se samo stanje 
-						odabranog odjeljka.
-					</para>
+					<para>Prikazuje se samo stanje odabranog odjeljka.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Repozitoriji
-				</term>
+				<term>Repozitoriji</term>
 				<listitem>
-					<para>
-						Prikazuju se samo omogućeni 
-						repozitoriji na sustavu.
-					</para>
+					<para>Prikaži samo omogućene repozitorije.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Prilagođeni filtri
-				</term>
+				<term>Prilagođeni filtri</term>
 				<listitem>
-					<para>
-						Prikazuju se samo paketi koji pristaju 
-						odabranom prilagođenom kriteriju.
-					</para>
+					<para>Prikazuju se samo paketi koji pristaju odabranom prilagođenom kriteriju.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Rezultati pretrage
-				</term>
+				<term>Rezultati pretrge</term>
 				<listitem>
-					<para>
-						Prikazuju se samo rezultati paketa 
-						odabrane pretrage.
-					</para>
+					<para>Prikazuju se samo rezultati paketa odabrane pretrage.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Arhitektura
-				</term>
+				<term>Arhitektura</term>
 				<listitem>
-					<para>
-						Prikazuju se sve računalne 
-						arhitekture.
-					</para>
+					<para>Prikazuje sve dostupne računalne arhitekture.</para>
 				</listitem>
 			</varlistentry>
-		</variablelist>
-	</para>
+		</variablelist></para>
 </sect2>
 
 
-<sect2 id="synaptic-win-list" xreflabel="popis paketa">
+<sect2 id="synaptic-win-list" xreflabel="package list">
 	<title>Popis paketa</title>
 
-	<para>
-		Popis paketa prikazuje pakete odabrane kategorije.
-	</para>
+	<para>Popis paketa prikazuje pakete odabrane kategorije.</para>
 
 	<figure>
 		<title>Popis paketa</title> 
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-packagelist.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-packagelist.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje popis paketa glavnog prozora &app;.
-					</phrase>
+					<phrase>Prikazuje popis paketa glavnog prozora <application>Synaptic upravitelja paketima</application>.</phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
 	</figure>
 
 	<tip>
-		<para>
-			Stanje ikona korištenja je objašnjeno u opisu ikona. Za otvaranje opisa odaberite iz glavnog izbornika 
-			<menuchoice><guimenu>Pomoć</guimenu><guimenuitem>Opis ikona</guimenuitem></menuchoice>.
-		</para>
+		<para>Stanje ikona korištenja je objašnjeno u opisu ikona. Za otvaranje opisa odaberite iz izbornika <menuchoice><guimenu>Pomoć</guimenu><guimenuitem>Opis ikona</guimenuitem></menuchoice>.</para>
 	</tip>
 
 
 	<tip>
-		<para>
-			Poredak stupaca i boje korištenja mogu se promijeniti u osobitostima.
-		</para>	
+		<para>Poredak stupaca i boje korištenja mogu se promijeniti u osobitostima.</para>	
 	</tip>
 </sect2>
 
 
-<sect2 id="synaptic-win-properties" xreflabel="svojstva">
+<sect2 id="synaptic-win-properties" xreflabel="properties">
 	<title>Svojstva paketa</title>
 
-	<para>
-		Dijalog svojstva odabranog paketa možete otvoriti na sljedeće načine:
-		
-		<itemizedlist>
+	<para>Dijalog svojstva odabranog paketa možete otvoriti na sljedeće načine: <itemizedlist>
 			<listitem>
-				<para>
-					Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Svojstva</guimenuitem></menuchoice>
-				</para>
+				<para>Odaberite iz izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Svojstva</guimenuitem></menuchoice></para>
 			</listitem>
 			<listitem>
-				<para>
-					Kliknite na <guibutton>Svojstva</guibutton> u alatnoj traci
-				</para>
+				<para>Kliknite na <guibutton>Svojstva</guibutton> u alatnoj traci</para>
 			</listitem>
 			<listitem>
-				<para>
-					Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>
-				</para>
+				<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo></para>
 			</listitem>
-		</itemizedlist>
-	</para>
+		</itemizedlist></para>
 		
 
 	<figure>
@@ -617,82 +373,16 @@
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-packagedetails.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-packagedetails.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje pojedinosti paketa u glavnom prozoru &app; main window.
-					</phrase>
+					<phrase>Prikazuje pojedinosti paketa u glavnom prozoru <application>Synaptic upravitelja paketima</application>.</phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
 	</figure>
 
-	<para>
-		Dijalog svojstva paketa omogućuje sljedeće kartice:
-
-		<table frame="topbot" id="table-synaptic-propertiestabs">
-			<title>Kartice u dijalogu svojstava</title>
-			<tgroup cols="2" colsep="0" rowsep="0">
-				<colspec colname="COLSPEC0" colwidth="30*"/>
-				<colspec colname="COLSPEC1" colwidth="70*"/>
-				<thead>
-					<row rowsep="1">
-						<entry valign="top" align="left">
-							Kartica
-						</entry>
-						<entry valign="top" align="left">
-							Opis
-						</entry>
-					</row>
-				</thead>
-				<tbody>
-					<row>
-						<entry valign="top">
-							Informacije
-						</entry>
-						<entry valign="top">
-							Prikazuje osnovne informacije paketa: naziv, stanje, održavatelja, 
-							prioritet, izvor, oznake <emphasis>(ako su podržane)</emphasis> i inačice.
-						</entry>
-					</row>
-					<row>
-						<entry valign="top">
-							Zavisnosti
-						</entry>
-						<entry valign="top">
-							Prikazuje popis zavisnih, ovisnih, omogućenih, sukobljenih, predloženih i preporučenih paketa.
-						</entry>
-					</row>
-					<row>
-						<entry valign="top">
-							Instalirane datoteke
-						</entry>
-						<entry valign="top">
-							Prikazuje putanje datoteka instaliranog paketa na sustavu.
-						</entry>
-					</row>
-					<row>
-						<entry valign="top">
-							Inačice
-						</entry>
-						<entry valign="top">
-							Prikazuje dostupne inačice paketa za instalaciju.
-						</entry>
-					</row>
-					<row>
-						<entry valign="top">
-							Opis
-						</entry>
-						<entry valign="top">
-							Prikazuje opširniji opis paketa, zapis promjena i sliku paketa.
-						</entry>
-					</row>
-				</tbody>
-			</tgroup>
-		</table>
-	</para>
+	<para>Dijalog svojstva paketa omogućuje sljedeće kartice: <table frame="topbot" id="table-synaptic-propertiestabs"><title>Kartice u dijalogu svojstva</title><tgroup cols="2" colsep="0" rowsep="0"><colspec colname="COLSPEC0" colwidth="30*"/><colspec colname="COLSPEC1" colwidth="70*"/><thead><row rowsep="1"><entry valign="top" align="left"> Kartica </entry><entry valign="top" align="left"> Opis </entry></row></thead><tbody><row><entry valign="top"> Informacije </entry><entry valign="top"> Prikazuje osnovne informacije paketa: naziv, kratak opis, održavatelja, stanje, prioritet, oznake <emphasis>(ako su podržane)</emphasis> i inačice. </entry></row><row><entry valign="top"> Zavisnosti </entry><entry valign="top"> Prikazuje potrebne, zavisne, pružene, predložene i preporučene pakete. </entry></row><row><entry valign="top"> Instalirane datoteke </entry><entry valign="top"> Prikazuje instalirane datoteke instaliranih paketa. </entry></row><row><entry valign="top"> Inačice </entry><entry valign="top"> Prikazuje dostupne inačice paketa. </entry></row><row><entry valign="top"> Opis </entry><entry valign="top"> Prikazuje opširniji opis paketa, zapis promjena i sliku aplikacije. </entry></row></tbody></tgroup></table></para>
 </sect2>
 
 </sect1>
@@ -874,167 +564,87 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect1 id="synaptic-single"> 
 	<title>Upravljanje paketima</title> 
 
-	<para>
-		Ovo poglavlje obuhvaća osnovne radnje <xref linkend="anchor-installing"/>,
-		<xref linkend="anchor-removing"/> i <xref linkend="anchor-upgrading"/>
-		paketa.
-	</para>
-	<para>
-		Nadalje izvođenje <xref linkend="anchor-dist-upgrade"/>,
-		<xref linkend="anchor-dwww"/> dokumentacije na internetu, 
-		<xref linkend="anchor-changelog"/> zapisa promjena i naprednih radnja
-		<xref linkend="anchor-force"/> instalacije određene inačice paketa,
-		<xref linkend="anchor-lock"/> paketa na trenutnu inačicu su opisani.
-	</para>  
+	<para>Ovo poglavlje obuhvaća osnovne radnje <xref linkend="anchor-installing"/>, <xref linkend="anchor-removing"/> i <xref linkend="anchor-upgrading"/> paketa.</para>
+	<para>Nadalje izvođenje <xref linkend="anchor-dist-upgrade"/>, <xref linkend="anchor-dwww"/> dokumentacije na internetu, <xref linkend="anchor-changelog"/> zapisa promjena i naprednih radnja <xref linkend="anchor-force"/> instalacije određene inačice paketa, <xref linkend="anchor-lock"/> paketa na trenutnu inačicu su opisani.</para>  
 
 <sect2 id="synaptic-pkg-install"> 
 	<title>Instalacija paketa</title>
 
-	<anchor id="anchor-installing" xreflabel="instalacija"/>
+	<anchor id="anchor-installing" xreflabel="installing"/>
 
 	<note>
-		<para>
-			Ako je dostupna drugačija inačica istog paketa &app;  će uobičajeno odabrati 
-			najprikladniju inačicu. Kako bi odabrali instalaciju određene inačice drugačije 
-			od uobičajene, pogledajte <xref linkend="synaptic-pkg-force"/>.
-		</para>
+		<para>Ako je dostupna drugačija inačica istog paketa <application>Synaptic upravitelj paketima</application> će uobičajeno odabrati najprikladniju inačicu. Kako bi odabrali instalaciju određene inačice drugačije od uobičajene, pogledajte <xref linkend="synaptic-pkg-force"/>.</para>
 	</note>
 
-	<para>
-		Ako želite instalirati određeni paket obavite sljedeće korake:
-	</para>
+	<para>Ako želite instalirati paket obavite sljedeće korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Učitajte informacije paketa kako bi bila dostupna najnovija inačica:
-
-			<itemizedlist>
+			<para>Učitajte informacije paketa  kako bi bila dostupna najnovija inačica: <itemizedlist>
 				<listitem>
-					<para>
-						Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-						<guimenuitem>Osvježi informacije o paketima</guimenuitem>
-						</menuchoice>.
-					</para>
+					<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.
-					</para>
+					<para>Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Pritisnite kombinaciju tipki 
-						<keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.
-					</para>
+					<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.</para>
 				</listitem>
-			</itemizedlist>
-			</para>
+			</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite paket za instalaciju:
-
-				<itemizedlist>
+			<para>Odaberite paket za instalaciju: <itemizedlist>
 					<listitem>
-						<para>
-							Dvostruko kliknite na naziv paketa u
-							<xref linkend="synaptic-win-list"/>.
-						</para>
+						<para>Dvostruko kliknite na naziv paketa u <xref linkend="synaptic-win-list"/>.</para>
 					</listitem>
 		                        <listitem>
-			                        <para>
-				                        Kliknite na ikonu stanja paketa i odaberite u izborniku <guimenuitem>
-					                Odaberi za instalaciju</guimenuitem>.
-						</para>
+			                        <para>Kliknite na ikonu stanja paketa i odaberite u izborniku <guimenuitem> Odaberi za instalaciju</guimenuitem>.</para>
 	                                </listitem>
 					<listitem>
-						<para>
-							Desno kliknite na paket u sadržaju izbornika i odaberite <guimenuitem>
-							Odaberi za instalaciju</guimenuitem>.
-						</para>
+						<para>Desno kliknite na paket u sadržaju izbornika i odaberite <guimenuitem> Odaberi za instalaciju</guimenuitem>.</para>
 					</listitem>
 			                <listitem>
-				                <para>
-					                Odaberite paket pa zatim iz
-							glavnog izbornika odaberite <menuchoice><guimenu>Paket</guimenu>
-						        <guimenuitem>Odaberi za instalaciju</guimenuitem> </menuchoice>.
-	                                        </para>
+				                <para>Odaberite paket pa zatim iz glavnog izbornika odaberite <menuchoice><guimenu>Paket</guimenu><guimenuitem>Odaberi za instalaciju</guimenuitem></menuchoice>.</para>
 		                        </listitem>
 					<listitem>
-						<para>
-							Odaberite paket i
-							pritisnite kombinaciju tipki <keycombo>
-							<keycap>Ctrl</keycap><keycap>I</keycap></keycombo>.
-						</para>
+						<para>Odaberite paket i pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
-			<para>
-				Ako instalacija paketa zahtijeva dodatne promjene, biti ćete upitani 
-				za potvrdu. Kako bi isto odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi
-				</guibutton>.
-			</para>
+				</itemizedlist></para>
+			<para>Ako instalacija paketa zahtijeva dodatne promjene, biti ćete upitani za potvrdu. Kako bi isto odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi </guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primijenite odabrane promjene za instalaciju paketa:
-
-				<itemizedlist>
+			<para>Primijenite odabrane promjene za instalaciju paketa: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.	
-					</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika  <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Primijeni odabrane promjene</guimenuitem> </menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.
-			</para>
+			<para>Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom procesa promjena vidjet ćete traku napretka.
-				To može potrajati neko vrijeme ovisno o broju promjena.
-				Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 </sect2>
 
 <sect2 id="synaptic-pkg-remove"> 
 	<title>Uklanjanje paketa</title>
-	<anchor id="anchor-removing" xreflabel="uklanjanje"/>
+	<anchor id="anchor-removing" xreflabel="removing"/>
 
 	<para>
 		<note>
-			<para>
-				Podešavanja paketa i korisnički stvoreni podaci (npr. web stranica u "/var/www") 
-				nisu uklonjeni iz sustava po zadanome.
-			</para>
-			<para>
-				<emphasis>Samo za Debian:</emphasis> možete promijeniti uobičajeno ponašanje u osobitostima.
-			</para>
-			<para>
-				<emphasis>Samo za Debian:</emphasis> kako bi uklonili sve datoteke povezane s paketom
-				odaberite <menuchoice><guimenuitem>Odaberi
-				za potpuno uklanjanje</guimenuitem></menuchoice> umjesto 
-				<menuchoice><guimenuitem>Odaberi za uklanjanje</guimenuitem></menuchoice>.
-			</para>
+			<para>Podešavanja paketa i korisnički stvoreni podaci (npr. web stranica u "/var/www") nisu uklonjeni iz sustava po zadanome.</para>
+			<para><emphasis>Samo za Debian:</emphasis> možete promijeniti uobičajeno ponašanje u osobitostima.</para>
+			<para><emphasis>Samo za Debian:</emphasis> kako bi uklonili sve datoteke povezane s paketom odaberite <menuchoice><guimenuitem>Odaberi za potpuno uklanjanje</guimenuitem></menuchoice> umjesto <menuchoice><guimenuitem>Odaberi za uklanjanje</guimenuitem></menuchoice>.</para>
 		</note>
 	</para>
 	<!-- para>
@@ -1048,229 +658,119 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 			</para>
 		</note>
 	</para -->
-	<para>
-		Kako bi uklonili pakete slijedite ove korake:
-	</para>
+	<para>Kako bi uklonili pakete slijedite ove korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite paket za uklanjanje:
-				<itemizedlist>
+			<para>Odabir paketa za uklanjanje: <itemizedlist>
 					<listitem>
-						<para>
-							Dvostruko kliknite na naziv instaliranog paketa u
-							<xref linkend="synaptic-win-list"/>.
-						</para>
+						<para>Dvostruko kliknite na naziv instaliranog paketa u <xref linkend="synaptic-win-list"/>.</para>
 					</listitem>
 		                        <listitem>
-			                        <para>
-				                        Kliknite na ikonu stanja paketa i odaberite u glavnom izborniku <guimenuitem>
-					                Odaberi za uklanjanje</guimenuitem>.
-						</para>
+			                        <para>Kliknite na ikonu stanja paketa i odaberite u glavnom izborniku <guimenuitem> Odaberi za uklanjanje</guimenuitem> .</para>
 	                                </listitem>
 					<listitem>
-						<para>
-							Desno kliknite na paket i odaberite iz sadržajnog izbornika <guimenuitem>
-							Odaberi za uklanjanje</guimenuitem>.
-						</para>
+						<para>Desno kliknite na paket i odaberite iz sadržajnog izbornika <guimenuitem> Odaberi za uklanjanje</guimenuitem>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika paket
-							a zatim odaberite <menuchoice><guimenu>Paket</guimenu>
-							<guimenuitem>Odaberi za uklanjanje</guimenuitem>
-							</menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika paket a zatim odaberite <menuchoice><guimenu>Paket</guimenu><guimenuitem>Odaberi za uklanjanje</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite paket i pritisnite
-							tipku <keycap>Delete</keycap>.
-						</para>
+						<para>Odaberite paket i pritisnite tipku <keycap>Delete</keycap>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
-			<para>
-				Ako uklanjanje paketa zahtijeva dodatne promjene, biti ćete upitani 
-				za potvrdu. Kako bi odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi
-				</guibutton>.
-			</para>
+				</itemizedlist></para>
+			<para>Ako uklanjanje paketa zahtijeva dodatne promjene, biti ćete upitani za potvrdu. Kako bi odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi </guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primjenjivanje odabranih promjena za trenutno uklanjanje paketa:
-
-				<itemizedlist>
+			<para>Primjenjivanje odabranih promjena za trenutno uklanjanje paketa: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.
-						</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Primijeni odabrane promjene</guimenuitem> </menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Upitani ste za potvrdu. Provjerite sažetak promjena koje će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.
-			</para>
+			<para>Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom primijenjivanja promjena vidjet ćete traku napredka. Pričekajte dok
-				se promjene ne primijene. To može potrajati neko vrijeme ovisno o broju
-				promjena. Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
-			<!--<note>
-			 	<para>
-					Traka napredka nije dostupna na Debian sustavima. Umjesto ćete
-					vidjeti opširniji prikaz u terminalu.
-				</para>
-			</note> -->
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 </sect2>
 <sect2 id="synaptic-pkg-upgrade"> 
 	<title>Nadogradnja paketa</title>
 
-	<anchor id="anchor-upgrading" xreflabel="nadogradnja"/>
+	<anchor id="anchor-upgrading" xreflabel="upgrading"/>
 
-	<para>
-		Za nadogradnju paketa slijedite ove korake:
-	</para>
+	<para>Za nadogradnju paketa slijedite ove korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Osvježite informacije paketa kako bi imali dostupne najnovije inačice:
-
-				<itemizedlist>
+			<para>Učitajte informacije paketa  kako bi bila dostupna najnovija inačica: <itemizedlist>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.
-						</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 
 		<listitem>
-			<para>
-				Odaberite pakete za nadogradnju:
-
-				<itemizedlist>
+			<para>Odaberite pakete za nadogradnju: <itemizedlist>
 					<listitem>
-						<para>
-							Dvostruko kliknite na naziv paketa s najnovijom inačicom dostupnom
-							u <xref linkend="synaptic-win-list"/>.
-						</para>
+						<para>Dvostruko kliknite na naziv paketa s najnovijom inačicom dostupnom u <xref linkend="synaptic-win-list"/>.</para>
 					</listitem>
 					<listitem>
-						<para>
-				                        Kliknite na ikonu stanja paketa i odaberite iz izbornika <guimenuitem>
-			                                Odaberi za nadogradnju</guimenuitem>.
-						</para>
+						<para>Kliknite na ikonu stanja paketa i odaberite iz izbornika <guimenuitem> Odaberi za nadogradnu</guimenuitem>.</para>
 	                                </listitem>
 					<listitem>
-						<para>
-							Desno kliknite na paket i odaberite iz izbornika sadržaja <guimenuitem>
-							Odaberi za nadogradnju</guimenuitem>.
-						</para>
+						<para>Desno kliknite na paket i odaberite iz izbornika sadržaja <guimenuitem> Odaberi za nadogradnu</guimenuitem>.</para>
 		                        </listitem>
 					<listitem>
-						<para>
-							Odaberite paket a zatim iz glavnog
-							izbornika odaberite <menuchoice><guimenu>Paket</guimenu>
-							<guimenuitem>Odaberi za nadogradnju</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite paket a zatim iz glavnog izbornika odaberite<menuchoice><guimenu>Paket</guimenu><guimenuitem>Odaberi za nadogradnju</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite paket i
-							pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-						</para>
+						<para>Odaberite paket i pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
-			<para>
-				Ako nadogradnja paketa zahtijeva dodatne promjene, biti ćete upitani 
-				za potvrdu. Kako bi odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi
-				</guibutton>.
-			</para>
+				</itemizedlist></para>
+			<para>Ako nadogradnja paketa zahtijeva dodatne promjene, biti ćete upitani za potvrdu. Kako bi odabrali dodatne promjene kliknite na tipku <guibutton>Odaberi </guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primijenite odabrane promjene za nadogradnju paketa:
-			</para>
+			<para>Primijenite odabrane promjene za nadogradnju paketa:</para>
 			<itemizedlist>
 				<listitem>
-					<para>
-						Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.
-					</para>
+					<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-						<guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.
-					</para>
+					<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Pritisnite kombinaciju tipki 
-						<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-					</para>
+					<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 				</listitem>
 			</itemizedlist>
 		</listitem>
 		<listitem>
-			<para>
-				Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.
-			</para>
+			<para>Upitani ste za potvrdu. Provjerite sažetak promjena koje će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom primijenjivanja promjena vidjet ćete traku napredka. Pričekajte dok se
-				promjene ne primijene. To može potrajati neko vrijeme ovisno o broju
-				promjena. Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
-			<!-- <note>
-				<para>
-					The progressbar is not available on Debian system. Instead you will
-					see a detailed terminal output.
-				</para>
-			</note> -->
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 	<tip>
-		<para>
-			Za nadogradnju svih instaliranih paketa na najnoviju inčicu,
-			pogledajte <xref linkend="synaptic-pkg-upgradesystem"/>.
-		</para>
+		<para>Za nadogradnju svih instaliranih paketa na najnoviju inačicu, pogledajte <xref linkend="synaptic-pkg-upgradesystem"/>.</para>
 	</tip>
 </sect2>
 
@@ -1278,160 +778,85 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect2 id="synaptic-pkg-upgradesystem"> 
 	<title>Nadogradnja cijelog sustava</title>
 
-	<anchor id="anchor-dist-upgrade" xreflabel="nadogradnje sustava"/>
+	<anchor id="anchor-dist-upgrade" xreflabel="system upgrade"/>
 	
-	<para>
-		&app; omogućuje dva načina odabira paketa za nadogradnju:
-		<variablelist>
+	<para><application>Synaptic upravitelj paketima</application> pruža dva način odabira paketa za nadogradnju: <variablelist>
 			<varlistentry>
-				<term>
-					Zadana nadogradnja
-				</term>
+				<term>Zadana nadogradnja</term>
 				<listitem>
-					<para> 
-						Način zadane nadogradnje odabire samo nadogradnju instaliranih paketa. 
-						Ako najnovija inačica zavisnosti paketa zavisi o neinstaliranim paketima 
-						ili je u sukobu s već instaliranim paketom, nadogradnja se neće odabrati.
-					</para>
+					<para>Način zadane nadogradnje odabire samo nadogradnju instaliranih paketa. Ako najnovija inačica zavisnosti paketa zavisi o neinstaliranim paketima ili je u sukobu s već instaliranim paketom, nadogradnja se neće odabrati.</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>
-					Pametna nadogradnja (Dist-Upgrade)
-				</term>
+				<term>Pametna nadogradnja (Dist-Upgrade)</term>
 				<listitem>
-					<para>
-						Način pametne nadogradnje pokušava inteligentno razriješiti sukobe paketa. To uključuje
-						instalaciju dodatnih potrebnih paketa i preferira pakete s višim prioritetom.
-					</para>
-					<para>
-						Pametna nadogradnja još je poznata i kao <emphasis>dist-upgrade</emphasis> u apt-get alatu terminala.
-					</para>
+					<para>Način pametne nadogradnje pokušava inteligentno razriješiti sukobe paketa. To uključuje instalaciju dodatnih potrebnih paketa i preferira pakete s višim prioritetom.</para>
+					<para>Pametna nadogradnja još je poznata i kao <emphasis>dist-upgrade</emphasis> u apt-get alatu terminala.</para>
 				</listitem>
 			</varlistentry>
-		</variablelist>
+		</variablelist><note>
+			<para>Nadogradnja na glavno izdanje operativnog sustava mora se obaviti načinom pametne nadogradnje, npr. iz Conectiva 9 na Conectiva 10 ili iz Debian Woody na Debian Stretch.</para>
+		</note></para>
 
-		<note>
-			<para>
-				Nadogradnja na glavno izdanje operativnog sustava mora se obaviti načinom 
-				pametne nadogradnje, npr. s Conectiva 9 na Conectiva 10 ili s 
-				Debian Woody na Debian Stretch.
-			</para>
-		</note>
-	</para>
-
-	<para>
-		Kako bi nadogradili svoj sustav na najnovije izdanje slijedite ove korake:
-	</para>
+	<para>Kako bi nadogradili svoj sustav na najnovije izdanje slijedite ove korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				 Osvježite informacije paketa kako bi imali dostupne najnovije inačice:
-
-				<itemizedlist>
+			<para>Učitajte informacije paketa  kako bi bila dostupna najnovija inačica: <itemizedlist>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.
-						</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki <keycombo>
-							<keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 
 		<listitem>
-			<para>
-				Odaberite sve dostupne nadogradnje: 
-
-				<itemizedlist>
+			<para>Odaberite sve dostupne nadogradnje: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Odaberi sve nadogradnje</guibutton>.
-						</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Odaberi sve nadogradnje </guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Odaberi sve nadogradnje...</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Odaberi sve nadogradnje</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki <keycombo>
-							<keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		
 		<listitem>
-			<para>
-				Odaberite način nadogradnje. Preporučljiva je pametna nadogradnja.
-			</para>
+			<para>Odaberite način nadogradnje. Preporučljiva je pametna nadogradnja.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primijenite odabrane promjene za trenutnu nadogradnju paketa:
-
-				<itemizedlist>
+			<para>Primijenite odabrane promjene za trenutnu nadogradnju paketa: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.
-						</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite u glavnom izborniku <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.
-			</para>
+			<para>Upitani ste za potvrdu. Provjerite sažetak promjena koje će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom primijenjivanja promjena vidjet ćete traku napredka. Pričekajte dok se
-				promjene ne primijene. To može potrajati neko vrijeme ovisno o broju
-				promjena. Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
-			<!--  <note>
-				<para>
-					The progressbar is not available on Debian system. Instead you will
-					see a detailed terminal output.
-				</para>
-			</note> -->
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 
 	<tip>
-		<para>
-			Možete promijeniti zadani način nadogradnje za buduće nadogradnje u osobitostima
-			<!-- xref linkend="synaptic-prefs-actions"/-->.
-		</para>
+		<para>Možete promijeniti zadani način nadogradnje za buduće nadogradnje u osobitostima.</para>
 	</tip>
 </sect2>
 
@@ -1531,112 +956,60 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 	<title>Primijenjivanje odabranih promjena</title>
 
 	<tip>
-		<para>
-			Za prikaz paketa koji su odabrani
-			odaberite filter "Odabrane promjene", pogledajte 
-			<xref linkend="synaptic-filter-apply"/>.
-		</para>
+		<para>Za prikaz paketa koji su odabrani odaberite filter "Odabrane promjene", pogledajte <xref linkend="synaptic-filter-apply"/>.</para>
 	</tip>
 
-	<para>
-		Za primjenu odabranih promjena odaberite:
-
-		<itemizedlist>
+	<para>Za primjenu odabranih promjena odaberite: <itemizedlist>
 			<listitem>
-				<para>
-					Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.
-				</para>
+				<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 			</listitem>
 			<listitem>
-				<para>
-					Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-					<guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.
-				</para>
+				<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 			</listitem>
 			<listitem>
-				<para>
-					Pritisnite kombinaciju tipki 
-					<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-				</para>
+				<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 			</listitem>
-		</itemizedlist>
-	</para>
-	<para>
-		Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-		Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.
-	</para>
-	<para>
-		Tijekom primijenjivanja promjena vidjet ćete traku napredka. Pričekajte dok se
-		promjene ne primijene. To može potrajati neko vrijeme ovisno o broju
-		promjena. Nakon završetka biti ćete vraćeni u glavni prozor.
-	</para>				
-	<!-- <note>
-		<para>
-			The progressbar is not available on Debian system. Instead you will
-			see a detailed terminal output.
-		</para>
-	</note> -->
+		</itemizedlist></para>
+	<para>Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>.</para>
+	<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+	<note>
+		<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+	</note>
 </sect2>
 
 <sect2 id="synaptic-pkg-undo">
 	<title>Uklanjanje odabira promjena</title>
 
-	<para>
-		Sljedeći načini omogućuju vam uklanjanje odabira promjena:
-	</para>
+	<para>Sljedeći načini omogućuju vam uklanjanje odabira promjena:</para>
 	
 	<variablelist>
 		<varlistentry>
-			<term>
-				Za uklanjanje odabira određenih paketa
-			</term>
+			<term>Za uklanjanje odabira određenih paketa</term>
 			<listitem>
 				<itemizedlist>
 					<listitem>
-						<para>
-							Desno kliknite na paket i odaberite iz sadržajnog izbornika <menuchoice>
-							<guimenuitem>Ukloni odabir</guimenuitem></menuchoice>.
-						</para>
+						<para>Desno kliknite na paket i odaberite iz sadržajnog izbornika <menuchoice><guimenuitem>Ukloni odabir</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite paket a zatim iz glavnog izbornika <menuchoice>
-							<guimenu>Paket</guimenu><guimenuitem>Ukloni odabir</guimenuitem>
-							</menuchoice>.
-						</para>
+						<para>Odaberite paket a zatim iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Ukloni odabir</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite paket i pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap>
-							<keycap>N</keycap></keycombo>.
-						</para>
+						<para>Odaberite paket i pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>.</para>
 					</listitem>
 				</itemizedlist>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
-			<term>
-				Za uklanjanje svih odabira
-			</term>
+			<term>Za uklanjanje svih odabira</term>
 			<listitem>
-				<para>
-					Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-					<guimenuitem>Ukloni sav odabir</guimenuitem></menuchoice>.
-				</para>
+				<para>Odaberite iz izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Ukloni sav odabir</guimenuitem></menuchoice>.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
-			<term>
-				Za uklanjanje posljednjeg odabira
-			</term>
+			<term>Za uklanjanje posljednjeg odabira</term>
 			<listitem>
-				<para>
-					Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-					<guimenuitem>Vrati</guimenuitem></menuchoice>.
-				</para>
-				<para>
-					Ovaj korak se može ponavljati. Najveći broj radnji vraćanja može biti postavljen u osobitostima.
-				</para>
+				<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Vrati</guimenuitem></menuchoice>.</para>
+				<para>Ovaj korak se može ponavljati. Najveći broj radnji vraćanja može biti postavljen u <menuchoice><guimenu>Postavke</guimenu><guimenuitem>Osobitosti</guimenuitem><guimenuitem>Broj radnji vraćanja:</guimenuitem></menuchoice></para>
 			</listitem>
 		</varlistentry>
 	</variablelist>
@@ -1647,73 +1020,44 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 	<para>
 		<note>
-			<para>
-				Za korištenje ove značajke morate instalirati paket
-				<emphasis>libgnome2-perl</emphasis>.
-			</para>
+			<para>Za korištenje ove značajke morate instalirati paket <emphasis>libgnome2-perl</emphasis>.</para>
 		</note>
 	</para>	
 
-	<para>
-		Debian omogućuje jedinstveni način, koji se zove <emphasis>debconf</emphasis>, za podešavanje softverskih paketa. Ova značajka
-		nije podržana u svim paketima. Ako paket podržava ovu značajku podešavanje se može obaviti 
-		putem pomoćnika.
-	</para>
+	<para>Debian omogućuje jedinstveni način, koji se zove <emphasis>debconf</emphasis>,  nije podržana u svim paketima. Ako paket podržava ovu značajku podešavanje se može obaviti putem pomoćnika.</para>
 
-	<para>
-		Za podešavanje podržanih paketa:
-	</para>
+	<para>Za podešavanje podržanih paketa:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite paket koji želite podesiti u 
-				<xref linkend="synaptic-win-list"/>.
-			</para>
+			<para>Odaberite paket koji želite podesiti u <xref linkend="synaptic-win-list"/>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu>
-				<guimenuitem>Prilagodi...</guimenuitem></menuchoice>.
-			</para>
+			<para>Odaberite iz izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Prilagodi...</guimenuitem></menuchoice>.</para>
 		</listitem>
 	</orderedlist>
 	<tip>
-		<para>
-			Za dobivanje popisa svih podesivih paketa odaberite iz odjeljka Prilagođeni filtri <emphasis>Debconf paketi</emphasis>.
-		</para>
+		<para>Za dobivanje popisa svih podesivih paketa odaberite filter <emphasis>Prilagodljivi paketi</emphasis>.</para>
 	</tip>
 </sect2>
 
 <sect2 id="synaptic-pkg-docu">
 	<title>Pregledavanje dokumentacije paketa (samo za Debian)</title>
 
-	<anchor id="anchor-dwww" xreflabel="pregledavanje"/>
+	<anchor id="anchor-dwww" xreflabel="browsing"/>
 
 
 	<note>
-		<para>
-			Za korištenje ove značajke morate instalirati paket <emphasis>dwww</emphasis>.
-		</para>
+		<para>Pregledavanje dokumentacije paketa (samo za Debian) <emphasis>dwww</emphasis>.</para>
 	</note>
 	
-	<para>
-		dwww omogućuje pristup svoj dokumentaciji instalacije
-		paketa putem web preglednika. Sva dokumentacija je
-		dostupna putem lokalnog HTTP poslužitelja.
-	</para>
+	<para>dwww omogućuje pristup svoj dokumentaciji instalacije paketa putem web preglednika. Sva dokumentacija je dostupna putem lokalnog HTTP poslužitelja.</para>
 
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite paket o kojemu želite pročitati dodatnu dokumentaciju u 
-				<xref linkend="synaptic-win-list"/>.
-			</para>
+			<para>Odaberite paket o kojemu želite pročitati dodatnu dokumentaciju u <xref linkend="synaptic-win-list"/>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu>
-				<guimenuitem>Pretraži dokumentaciju</guimenuitem></menuchoice>.
-			</para>
+			<para>Odaberite <menuchoice><guimenu>Paket</guimenu><guimenuitem>Pretraži dokumentaciju</guimenuitem></menuchoice>.</para>
 		</listitem>
 	</orderedlist>
 
@@ -1721,29 +1065,20 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect2 id="synaptic-pkg-changelog">
 	<title>Pregledavanje zapisa promjena paketa (samo za Debian)</title>
 
-	<anchor id="anchor-changelog" xreflabel="čitanje"/>
+	<anchor id="anchor-changelog" xreflabel="reading"/>
 
 	<note>
-		<para>
-			Mogu se vidjeti samo zapisi promjena izvornih Debianovih paketa.
-		</para>
+		<para>Mogu se vidjeti samo zapisi promjena izvornih Debianovih paketa.</para>
 	</note>
 	
-	<para>
-		Za pregled zapisa promjena izvornih Debianovih paketa obavite sljedeće korake:
-	</para>
+	<para>Za pregled zapisa promjena izvornih Debianovih paketa obavite sljedeće korake:</para>
 
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite paket u <xref linkend="synaptic-win-list"/>.
-			</para>
+			<para>Odaberite paket u <xref linkend="synaptic-win-list"/>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu>
-				<guimenuitem>Preuzmi zapis promjena</guimenuitem></menuchoice>.
-			</para>
+			<para>Odaberite <menuchoice><guimenu>Paket</guimenu><guimenuitem/></menuchoice>.</para>
 		</listitem>
 	</orderedlist>
 </sect2>
@@ -1751,33 +1086,19 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect2 id="synaptic-pkg-lock">
 	<title>Zaključavanje paketa na trenutnu inačicu (samo za Debian)</title>
 
-	<anchor id="anchor-lock" xreflabel="zaključavanje"/>
+	<anchor id="anchor-lock" xreflabel="locking"/>
 
-	<para>
-		Za zaključavanje paketa na trenutnu inačicu slijedite ove korake:
-	</para>
+	<para>Za zaključavanje paketa na trenutnu inačicu slijedite ove korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite paket koji želite zaključati u <xref linkend="synaptic-win-list"/>.
-			</para>
+			<para>Odaberite paket koji želite zaključati u <xref linkend="synaptic-win-list"/>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu>
-				<guimenuitem>Zaključaj inačicu</guimenuitem></menuchoice>.
-			</para>
-			<para>
-				&app; će ponovno učitati informacije paketa. Tada bi trebali vidjeti, da je stavka izbornika <menuchoice>
-				<guimenu>Paket</guimenu><guimenuitem>Zaključaj inačicu</guimenuitem></menuchoice> odabrana.
-				Nadalje sve radnje u izborniku <guimenu>Paket</guimenu> sada su onemogućene.
-			</para>
+			<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Zaključaj inačicu</guimenuitem></menuchoice>.</para>
+			<para><application>Synaptic upravitelj paketima</application> će ponovno učitati informacije paketa. Tada bi trebali vidjeti, da je stavka izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Zaključaj inačicu</guimenuitem></menuchoice> odabrana. Nadalje su sve radnje u izborniku <guimenu>Paket</guimenu> sada su onemogućene.</para>
 		</listitem>
 	</orderedlist>
-	<para>
-		Za otključavanje paketa uklonite odabir iz izbornika sa <menuchoice><guimenu>Paket</guimenu><guimenuitem>Zaključaj inačicu</guimenuitem>
-		</menuchoice>.
-	</para>
+	<para>Za otključavanje paketa uklonite odabir <menuchoice><guimenu>Paket</guimenu><guimenuitem>Zaključaj inačicu</guimenuitem></menuchoice>.</para>
 </sect2>
 
 
@@ -1785,178 +1106,95 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect2 id="synaptic-pkg-force">
 	<title>Odabir instalacije određene inačice</title>
 
-	<anchor id="anchor-force" xreflabel="odabir"/>
+	<anchor id="anchor-force" xreflabel="forcing"/>
 
 	<warning>
-		<para>
-			&app; uvijek odabire najprihvatljivije dostupne inačice. Ako odaberete 
-			drugačiju inačicu od zadane, mogu se dogoditi greške u rukovanju sa
-			zavisnostima.
-		</para>
+		<para><application>Synaptic upravitelj paketima</application> uvijek odabire najprihvatljivije dostupne inačice. Ako odaberete drugačiju inačicu od zadane, mogu se dogoditi greške u rukovanju sa zavisnostima.</para>
 	</warning>
 
-	<para>
-		Za odabir instalacije inačice paketa drugačije od zadane 
-		obavite sljedeće korake:
-	</para>
+	<para>Za odabir instalacije inačice paketa drugačije od zadane obavite sljedeće korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Osvježite informacije paketa kako bi imali dostupne najnovije inačice:
-
-			<itemizedlist>
+			<para>Učitajte informacije paketa  kako bi bila dostupna najnovija inačica: <itemizedlist>
 				<listitem>
-					<para>
-						Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-						<guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.
-					</para>
+					<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.
-					</para>
+					<para>Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.</para>
 				</listitem>
 				<listitem>
-					<para>
-						Pritisnite kombinaciju tipki 
-						<keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.
-					</para>
+					<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>.</para>
 				</listitem>
-			</itemizedlist>
-			</para>
+			</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite paket s <xref linkend="synaptic-win-list"/>.
-			</para>
+			<para>Odaberite paket u <xref linkend="synaptic-win-list"/>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Paket</guimenu><guimenuitem>Odaberi inačicu...</guimenuitem>
-				</menuchoice> za otvaranje dijaloga sa svim dostupnim inačicama paketa.
-			</para>
+			<para>Odaberite u izborniku <menuchoice><guimenu>Paket</guimenu><guimenuitem>Odaberi inačicu...</guimenuitem></menuchoice> za otvaranje dijaloga sa svim dostupnim inačicama paketa.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite određenu inačicu za instalaciju. Za potvrdu vaše 
-				odluke kliknite na tipku <guibutton>Odaberi inačicu</guibutton>.
-			</para>
+			<para>Odaberite određenu inačicu za instalaciju. Za potvrdu vaše odluke kliknite na tipku <guibutton>Odaberi inačicu</guibutton>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primijenite odabrane promjene za instalaciju odabrane inačice paketa:
-
-				<itemizedlist>
+			<para>Primijenite odabrane promjene za instalaciju odabrane inačice paketa: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.	
-					</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite u izborniku <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Primijeni odabrane promjene</guimenuitem>
-							</menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>
-			</para>
+			<para>Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton></para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom procesa promjena vidjet ćete traku napretka.
-				To može potrajati neko vrijeme ovisno o broju promjena.
-				Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
-			<!-- <note>
-				<para>
-					The progressbar is not available on Debian system. Instead you will
-					see a detailed terminal output.
-				 </para>
-			</note> -->
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 </sect2>
 <sect2 id="synaptic-pkg-fix">
 	<title>Popravljanje slomljenih paketa</title>
 	
-	<para>
-		&app; neće dopustiti sve buduće promjene na sustavu prije nego što se svi slomljeni paketi ne poprave.
-	</para>
+	<para><application>Synaptic upravitelj paketima</application> neće dopustiti sve buduće promjene na sustavu prije nego što se svi slomljeni paketi ne poprave.</para>
 	<tip>
-		<para>
-			Za prikaz svih slomljenih paketa odaberite u odjeljku Prilagođeni filtri <emphasis>Slomljeno</emphasis>.
-		</para>
+		<para>Za prikaz svih slomljenih paketa odaberite <emphasis>Broken</emphasis> filter.</para>
 	</tip>
 
-	<para>
-		Za popravak slomljenih paketa odaberite sljedeće korake:
-		odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-		<guimenuitem>Popravi slomljene pakete</guimenuitem></menuchoice>.
-	</para>
+	<para>Za popravak slomljenih paketa odaberite sljedeće korake: odaberite iz izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Popravi slomljene pakete</guimenuitem></menuchoice>.</para>
 
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Popravi slomljene pakete</guimenuitem>
-				</menuchoice>.
-			</para>
+			<para>Odaberite iz izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Popravi slomljene pakete</guimenuitem></menuchoice>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Primijenite odabrane promjene za trenutni popravak:
-
-				<itemizedlist>
+			<para>Primijenite odabrane promjene za trenutni popravak: <itemizedlist>
 					<listitem>
-						<para>
-							Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.	
-					</para>
+						<para>Kliknite u alatnoj traci na <guibutton>Primijeni</guibutton>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-							<guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.
-						</para>
+						<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Primijeni odabrane promjene</guimenuitem></menuchoice>.</para>
 					</listitem>
 					<listitem>
-						<para>
-							Pritisnite kombinaciju tipki 
-							<keycombo><keycap>Ctrl</keycap><keycap>E</keycap></keycombo>.
-						</para>
+						<para>Pritisnite kombinaciju tipki <keycombo><keycap>Ctrl</keycap><keycap>E</keycap></keycombo>.</para>
 					</listitem>
-				</itemizedlist>
-			</para>
+				</itemizedlist></para>
 		</listitem>
 		<listitem>
-			<para>
-				Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. 
-				Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton>
-			</para>
+			<para>Biti ćete upitani za potvrdu. Provjerite sažetak promjena koji će se primijeniti. Za nastavak trenutne instalacije potvrdite promjene klikom na <guibutton>Primijeni</guibutton></para>
 		</listitem>
 		<listitem>
-			<para>
-				Tijekom procesa promjena vidjet ćete traku napretka.
-				To može potrajati neko vrijeme ovisno o broju promjena.
-				Nakon završetka biti ćete vraćeni u glavni prozor.
-			</para>				
-			<!-- <note>
-				<para>
-					The progressbar is not available on Debian system. Instead you will
-					see a detailed terminal output.
-				 </para>
-			</note> -->
+			<para>Tijekom procesa promjena vidjet ćete traku napretka. To može potrajati neko vrijeme ovisno o broju promjena.  Nakon završetka biti ćete vraćeni u glavni prozor.</para>				
+			<note>
+				<para>Traka napretka nije dostupna na Debian sustavima. Umjesto ćete vidjeti opširniji prikaz u terminalu.</para>
+			</note>
 		</listitem>
 	</orderedlist>
 </sect2>
@@ -1967,60 +1205,37 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 <sect1 id="synaptic-repo">
 	<title>Repozitoriji</title>
 
-	<para>
-		Paketi su dostupni putem takozvanih <emphasis>repozitorija</emphasis>. Repozitoriji sadrže
-		pakete i sadržaj koji uključuje neke osnovne informacije o paketima, npr. potrebne zavisnosti	
-		i kratak opis.
-	</para>
-	<para>
-		Repozitoriji mogu biti smješteni na raznim medijima: CD-ROM/DVD-ima, lokalnim čvrstim diskovima, Internetu (http,ftp) 
-		ili udaljenim datotečnim sustavima (nfs).
-	</para>
+	<para>Paketi su dostupni putem takozvanih <emphasis>repozitorija</emphasis>. Repozitoriji sadrže pakete i sadržaj koji uključuje neke osnovne informacije o paketima, npr. potrebne zavisnosti ili kratak opis.</para>
+	<para>Repozitoriji mogu biti smješteni na raznim medijima: CD-Rom/DVD-ima, lokalnim čvrstim diskovima, Internetu (http, ftp) ili udaljenim datotečnim sustavima (nfs).</para>
 
 
 <sect2 id="synaptic-repo-update"> 
 	<title>Osvježavanje informacija paketa</title> 
-	<para>
-		Za prikupljanje popisa svih dostupnih paketa iz repozitorija odaberite jedan od sljedećih
-		načina:
-	</para>
+	<para>Za prikupljanje popisa svih dostupnih paketa iz repozitorija odaberite jedan od sljedećih načina:</para>
 	<itemizedlist>
 		<listitem>
-			<para>
-				Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu>
-				<guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.
-			</para>
+			<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Osvježi informacije o paketima</guimenuitem></menuchoice>.</para>
 		</listitem>
 		<listitem>
-			<para>
-				Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.
-			</para>
+			<para>Kliknite u alatnoj traci na <guibutton>Osvježi</guibutton>.</para>
 		</listitem>
 	</itemizedlist>
 </sect2>
 
 <sect2 id="synaptic-repo-manage"> 
 	<title>Uređivanje, dodavanje ili uklanjanje repozitorija</title> 
-	<para>
-		Možete uređivati, dodavati ili uklanjati repozitorije u osobitostima repozitorija.
-	</para>
-	<para>
-		Otvorite uređivača repozitorija iz glavnog izbornika <menuchoice><guimenu>Postavke</guimenu>
-		<guimenuitem>Repozitoriji</guimenuitem></menuchoice>.
-	</para>
+	<para>Možete uređivati, dodavati ili uklanjati repozitorije u osobitostima repozitorija.</para>
+	<para>Otvorite uređivača repozitorija iz glavnog izbornika <menuchoice><guimenu>Postavke</guimenu><guimenuitem>Repozitoriji</guimenuitem></menuchoice>.</para>
 
 	<figure>
 		<title>Osobitosti repozitorija</title>
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-repositories.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-repositories.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje osobitosti repozitorija
-					</phrase>
+					<phrase>Prikazuje osobitosti repozitorija</phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
@@ -2030,81 +1245,40 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 <sect2 id="synaptic-repo-cdrom"> 
 	<title>Dodavanje repozitorija s CD-ROM-a</title> 
-	<para> 
-		Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Dodaj CD...</guimenuitem></menuchoice>.
-	</para>
+	<para>Odaberite iz glavnog izbornika <menuchoice><guimenu>Uredi</guimenu><guimenuitem>Dodaj CD-ROM...</guimenuitem></menuchoice>.</para>
 </sect2>
 
 <sect2 id="synaptic-repo-aptline"> 
 	<title>Sintaksa APT redka</title> 
-	<para> 
-		Upravitelj paketima sprema sve dostupne repozitorije u tekstom temeljenu datoteku podešavanja. 
-		Svaki redak opisuje vrstu, lokaciju i sadržaj određenog repozitorija.
-	</para>
+	<para>Upravitelj paketima sprema sve dostupne repozitorije u tekstom temeljenu datoteku podešavanja. Svaki redak opisuje vrstu, lokaciju i sadržaj određenog repozitorija.</para>
 
 	<table frame="topbot" id="table-synaptic-aptline-syntax">
-		<title>Primjer sintakse APT redka: <emphasis>deb http://debian.iskon.hr stretch main</emphasis></title>
+		<title>Primjer sintakse APT redka: <emphasis>deb http://ftp.debian.org sarge main</emphasis></title>
 		<tgroup cols="2" colsep="0" rowsep="0">
 			<colspec colname="COLSPEC0" colwidth="30*"/>
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<thead>
 				<row rowsep="1">
-					<entry valign="top" align="left">
-						Element
-					</entry>
-					<entry valign="top" align="left">
-						opis
-					</entry>
+					<entry valign="top" align="left">Element</entry>
+					<entry valign="top" align="left">Opis</entry>
 				</row>
 			</thead>
 			<tbody>
 				<row>
-					<entry valign="top">
-						deb
-					</entry>
-					<entry valign="top">
-						Prvi element opisuje vrstu repozitorija.
-						Moguće vrijednosti su <emphasis>deb</emphasis> (Debian binarni paketi), <emphasis>deb-src
-						</emphasis>(Debian paketi izvornog kôda), <emphasis>rpm</emphasis> (RPM binarni paketi), 
-						<emphasis>rpm-src</emphasis> (Redhat paketi izvornog kôda), <emphasis>rpmdir</emphasis>
-						(mape koje sadrže RPM binarne pakete) i <emphasis>rpmdir-src</emphasis> 
-						(mape koje sadrže RPM pakete izvornog kôda).
-					</entry>
+					<entry valign="top">deb</entry>
+					<entry valign="top">Prvi element opisuje vrstu repozitorija. Moguće vrijednosti su <emphasis>deb</emphasis> (Debian binarni paketi), <emphasis>deb-src</emphasis>(Debian paketi izvornog kôda), <emphasis>rpm</emphasis> (RPM binarni paketi), <emphasis>rpm-src</emphasis> (Redhat paketi izvornog kôda), <emphasis>rpmdir</emphasis> (mape koje sadrže RPM binarne pakete) i <emphasis>rpmdir-src</emphasis> (mape koje sadrže RPM pakete izvornog kôda).</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						http://debian.iskon.hr
-					</entry>
-					<entry valign="top">
-						Drugi element je lokacija repozitorija.
-						Repozitoriju se može pristupiti putem protokola HTTP i 
-						FTP, ili lokalno na CD-u, DVD-u ili čvrstom disku.
-					</entry>
+					<entry valign="top">http://ftp.debian.org</entry>
+					<entry valign="top">Drugi element je lokacija repozitorija. Repozitoriju se može pristupiti putem protokola HTTP i FTP, ili lokalno na CD-u, DVD-u ili čvrstom disku.</entry>
 			        </row>
 				<row>
-					<entry valign="top">
-						stretch
-					</entry>
-					<entry valign="top">
-						Treći element opisuje distribuciju za koji je 
-						paket napravljen, pogledajte <ulink 
-						url="https://www.debian.org/doc/manuals/developers-reference/ch04.en.html#s4.6.4">
-						Napomene Debianovih razvijatelja</ulink> za više pojedinosti o Debianovim distribucijama.
-					</entry>
+					<entry valign="top">sarge</entry>
+					<entry valign="top">Treći element opisuje distribuciju za koji je paket napravljen, pogledajte <ulink url="https://www.debian.org/doc/manuals/developers-reference/ch04.en.html#s4.6.4">Napomene Debianovih razvijatelja</ulink> za više pojedinosti o Debianovim distribucijama.</entry>
 			        </row>
 				<row>
-					<entry valign="top">
-						main
-					</entry>
-					<entry valign="top">
-						Četvrti element opisuje odjeljak 
-						repozitorija koji bi trebao biti uključen. Prema zadanome službeni Debianovi repozitoriji su
-						odvojeni u odjeljke <emphasis>main</emphasis>, <emphasis>
-						contrib</emphasis> i <emphasis>non-free</emphasis>, pogledajte 
-						<ulink
-						 url="https://www.debian.org/doc/manuals/developers-reference/ch04.en.html#archive-sections">
-						 Napomene Debianovih razvijatelja</ulink> za više pojedinosti o Debianovim odjeljcima.
-					</entry>
+					<entry valign="top">main</entry>
+					<entry valign="top">Četvrti element opisuje odjeljak repozitorija koji bi trebao biti uključen. Prema zadanome službeni Debianovi repozitoriji su odvojeni u odjeljke <emphasis>main</emphasis>, <emphasis>contrib</emphasis> i <emphasis>non-free</emphasis>, pogledajte <ulink url="https://www.debian.org/doc/manuals/developers-reference/ch04.en.html#archive-sections">Napomene Debianovih razvijatelja</ulink> za više pojedinosti o Debianovim odjeljcima.</entry>
 			        </row>
 			</tbody>
 		</tgroup>
@@ -2118,12 +1292,8 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 <sect1 id="synaptic-filter">
 	<title>Prilagođeni filtri</title>
-	<para>
-		Filtri vam omogućuju sužavanje popisa prikazanih paketa prema raznim svojstvima paketa.
-	</para>
-	<para>
-		&app; dolazi sa skupom predodređenih filtra.
-	</para>
+	<para>Filtri vam omogućuju sužavanje popisa prikazanih paketa prema raznim svojstvima paketa.</para>
+	<para><application>Synaptic upravitelj paketima</application> dolazi sa skupom predodređenih filtra.</para>
 
 	<table frame="topbot" id="table-synaptic-filters">
 		<title>Predodređeni filtri</title>
@@ -2132,56 +1302,37 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<thead>
 				<row rowsep="1">
-					<entry valign="top" align="left">
-						Filter
-					</entry>
-					<entry valign="top" align="left">
-						Opis
-					</entry>
+					<entry valign="top" align="left">Prilagođeni filtri</entry>
+					<entry valign="top" align="left">Opis</entry>
 				</row>
 			</thead>
 			<tbody>
 				<row>
 					<entry valign="top">Svi paketi</entry>
-					<entry valign="top">
-						Prikazuje sve dostupne pakete.
-					</entry>
+					<entry valign="top">Prikazuje sve dostupne pakete.</entry>
 				</row>
 				<row>
 					<entry valign="top">Odabrane promjene</entry>
-					<entry valign="top">
-						Prikazuje sve pakete koji su odabrani za promjenu.
-					</entry>
+					<entry valign="top">Prikazuje sve pakete koji su odabrani za promjenu.</entry>
 			        </row>
 				<row>
 					<entry valign="top">Debconf paketi</entry>
-					<entry valign="top">
-						Prikazuje sve pakete koji se mogu podesiti putem debconfa
-						(samo za Debian).
-			                </entry>
+					<entry valign="top">Prikazuje sve pakete koji se mogu podesiti putem debconfa (samo za Debian).</entry>
 				</row>
 				<row>
 					<entry valign="top">Slomljeno</entry>
-					<entry valign="top">
-						Prikazuje samo pakete sa slomljenim zavisnostima.
-			                </entry>
+					<entry valign="top">Prikazuje samo pakete sa slomljenim zavisnostima.</entry>
 				</row>
 				<row>
 					<entry valign="top">Nadogradivo (upstream)</entry>
-					<entry valign="top">
-						Prikazuje sve pakete koji su nadogradivi na najnoviju 
-						inačicu.
-			                </entry>
+					<entry valign="top">Prikazuje sve pakete koji su nadogradivi na najnoviju inačicu.</entry>
 				</row>
 			</tbody>
 		</tgroup>
 	</table>
 
 
-	<para>
-		Zbog mogućih promjena u sučelju postavke predodređenih filtera su isto promijenjene.
-		Stari i zastarjeli filtri nisu automatski uklonjeni Synapticom. 
-	</para>
+	<para>Zbog mogućih promjena u sučelju postavke predodređenih filtera su isto promijenjene. Stari i zastarjeli filtri nisu automatski uklonjeni Synapticom.</para>
 
 	<table frame="topbot" id="table-synaptic-filters-deprecated">
 		<title>Zastarjeli filtri</title>
@@ -2190,78 +1341,50 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<thead>
 				<row rowsep="1">
-					<entry valign="top" align="left">
-						Filter
-					</entry>
-					<entry valign="top" align="left">
-						Opis
-					</entry>
+					<entry valign="top" align="left">Prilagođeni filtri</entry>
+					<entry valign="top" align="left">Opis</entry>
 				</row>
 			</thead>
 			<tbody>
 				<row>
 					<entry valign="top">Instalirano</entry>
-					<entry valign="top">
-						Prikazuje samo trenutno instalirane pakete.
-					</entry>
+					<entry valign="top">Prikazuje samo trenutno instalirane pakete.</entry>
 			        </row>
 				<row>
 					<entry valign="top">Nije instalirano</entry>
-					<entry valign="top">
-						Prikazuje pakete koji nisu trenutno instalirani.
-			                </entry>
+					<entry valign="top">Prikazuje pakete koji nisu trenutno instalirani.</entry>
 				</row>
 				<row>
 					<entry valign="top">Nadogradivo</entry>
-					<entry valign="top">
-						Prikazuje samo pakete s najnovijom dostupnom inačicom.
-			                </entry>
+					<entry valign="top">Prikazuje samo pakete s najnovijom dostupnom inačicom.</entry>
 				</row>
 				<row>
 					<entry valign="top">Slomljeno</entry>
-					<entry valign="top">
-						Prikazuje samo pakete sa slomljenim zavisnostima.
-			                </entry>
+					<entry valign="top">Prikazuje samo pakete sa slomljenim zavisnostima.</entry>
 				</row>
 				<row>
 					<entry valign="top">Programirane promjene</entry>
-					<entry valign="top">
-						Prikazuje samo pakete odabrane za promjenu.
-			                </entry>
+					<entry valign="top">Prikazuje samo pakete odabrane za promjenu.</entry>
 				</row>
 				<row>
 					<entry valign="top">Novo u arhivi</entry>
-					<entry valign="top">
-						Prikazuje samo nove pakete od posljednje 
-						nadopune repozitorija.
-					</entry>
+					<entry valign="top">Prikazuje samo nove pakete od posljednje nadopune repozitorija.</entry>
 				</row>
 				<row>
 					<entry valign="top">Preostalo</entry>
-					<entry valign="top">
-						Prikazuje samo uklonjene pakete koji su ostavili
-						podatke ili datoteke podešavanja na sustavu.
-					</entry>
+					<entry valign="top">Prikazuje samo uklonjene pakete koji su ostavili podatke ili datoteke podešavanja na sustavu.</entry>
 				</row>
 				<row>
 					<entry valign="top">Debconf paketi</entry>
-					<entry valign="top">
-						Prikazuje samo pakete koji se mogu podesiti putem
-						debianovog sustava podešavanja paketa, takozvanog debconfa.
-					</entry>
+					<entry valign="top">Prikazuje samo pakete koji se mogu podesiti putem debianovog sustava podešavanja paketa, takozvanog debconfa.</entry>
 				</row>
 				<row>
 					<entry valign="top">Zastarjeli ili lokalno instalirani</entry>
-					<entry valign="top">
-						Prikazuje samo pakete koji nisu uključeni (duže vrijeme)
-						ni u jedan određeni repozitorij.
-					</entry>
+					<entry valign="top">Prikazuje samo pakete koji nisu uključeni (duže vrijeme) ni u jedan određeni repozitorij.</entry>
 				</row>
 				<row>
 					<entry valign="top">Filter pretrge</entry>
-					<entry valign="top">
-						Prikazuje rezultate posljednje pretrage paketa.
-					</entry>
+					<entry valign="top">Prikazuje rezultate posljednje pretrage paketa.</entry>
 				</row>
 			</tbody>
 		</tgroup>
@@ -2269,118 +1392,74 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 <sect2 id="synaptic-filter-apply"> 
 	<title>Primjenjivanje filtera</title> 
-	<para>
-		Za primjenu filtra slijedite ove korake:
-	</para>
+	<para>Za primjenu filtra slijedite ove korake:</para>
 	<orderedlist>
 		<listitem>
-			<para>
-				Odaberite <guibutton>Prilagođeni filtri</guibutton> iz polja kategorija u 
-				glavnom prozoru.
-			</para>	
+			<para>Odaberite <guibutton>Prilagođeni filtri</guibutton> iz polja kategorija u glavnom prozoru.</para>	
 		</listitem>
 		<listitem>
-			<para>
-				Odaberite željeni filter iz <xref linkend="synaptic-win-selector"/>.
-			</para>
+			<para>Odaberite željeni filter iz <xref linkend="synaptic-win-selector"/>.</para>
 		</listitem>
 	</orderedlist>
 </sect2>
 
-<sect2 id="synaptic-filter-edit" xreflabel="uređivač filtra"> 
+<sect2 id="synaptic-filter-edit" xreflabel="filter editor"> 
 	<title>Uređivanje i stvaranje prilagođenih filtra</title> 
 
-	<para>
-		Filtri se mogu stvarati, brisati i mijenjati u uređivaču filtra:
-	</para>
+	<para>Filtri se mogu stvarati, brisati i mijenjati u uređivaču filtra:</para>
 
-	<para>
-		Odaberite iz glavnog izbornika <menuchoice><guimenu>Postavke</guimenu><guimenuitem>
-		Filtri</guimenuitem></menuchoice>.
-	</para>
+	<para>Odaberite iz izbornika <menuchoice><guimenu>Postavke</guimenu><guimenuitem> Filtri</guimenuitem></menuchoice>.</para>
 
 	<figure>
 		<title>Uređivač filtra</title> 
 		<screenshot> 
 			<mediaobject> 
 				<imageobject>
-					<imagedata fileref="figures/synaptic-filter.png" 
-						format="PNG"/> 
+					<imagedata fileref="figures/synaptic-filter.png" format="PNG"/> 
 				</imageobject>
 				<textobject> 
-					<phrase>
-						Prikazuje uređivača filtra.
-					</phrase>
+					<phrase>Prikazuje uređivača filtra.</phrase>
 				</textobject> 
 			</mediaobject> 
 		</screenshot> 
 	</figure>
 
-	<para>
-		Uređivač filtra sadrži sljedeće komponente:
-	</para>
+	<para>Uređivač filtra sadrži slijedeće komponente:</para>
 	
 	<variablelist>
 		<varlistentry>
-			<term>
-				Popis filtra
-			</term>
+			<term>Popis filtra</term>
 			<listitem>
-				<para>
-					Prikazuje popis dostupnih filtra.
-				</para>
+				<para>Prikazuje popis dostupnih filtra.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
-			<term>
-				Pravila
-			</term>
+			<term>Pravila</term>
 			<listitem>
-				<para>
-					Pravila vam omogućuju definiranje koji će paketi biti prikazani u popisu.
-					Paket mora ispuniti sve odabrane kriterije.
-				</para>
+				<para>Pravila vam omogućuju definiranje koji će paketi biti prikazani u popisu. Paket mora ispuniti sve odabrane kriterije.</para>
 				<variablelist>
 					<varlistentry>
-						<term>
-							Stanje
-						</term>
+						<term>Stanje</term>
 						<listitem>
-							<para>
-								Omogućuje pretragu paketa prema stanju.
-							</para>
+							<para>Omogućuje pretragu paketa prema stanju.</para>
 						</listitem>
 					</varlistentry>
 					<varlistentry>
-						<term>
-							Odjeljak
-						</term>
+						<term>Odjeljak</term>
 						<listitem>
-							<para>
-								Omogućuje pretragu paketa prema odjeljku,
-							</para>
+							<para>Omogućuje pretragu paketa prema odjeljku.</para>
 						</listitem>
 					</varlistentry>
 					<varlistentry>
-						<term>
-							Svojstva
-						</term>
+						<term>Svojstva</term>
 						<listitem>
-							<para>
-								Omogućuje pretragu paketa prema različitim
-								svojstvima npr. nazivu, zavisnosti ili izvoru.
-							</para>
+							<para>Omogućuje pretragu paketa prema različitim svojstvima npr. nazivu, zavisnosti ili izvoru.</para>
 						</listitem>
 					</varlistentry>
 					<varlistentry>
-						<term>
-							Ključne riječi
-						</term>
+						<term>Ključne riječi</term>
 						<listitem>
-							<para>
-								Ključne riječi su temeljene na deb-oznakama. Samo GNU/Linux 
-								s instaliranim "deb-oznakama" podržava ovu značajku.
-							</para>
+							<para>Ključne riječi su temeljene na deb-oznakama. Samo GNU/Linux s instaliranim "deb-oznakama" podržava ovu značajku.</para>
 						</listitem>
 					</varlistentry>
 				</variablelist>
@@ -2609,45 +1688,22 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<thead>
 				<row rowsep="1">
-					<entry valign="top" align="left">
-						Problem
-					</entry>
-					<entry valign="top" align="left">
-						Rješenje
-					</entry>
+					<entry valign="top" align="left">Problem</entry>
+					<entry valign="top" align="left">Rješenje</entry>
 				</row>
 			</thead>
 			<tbody>
 				<row>
-					<entry valign="top">
-						Nepodržana lokalizacija
-					</entry>
-					<entry valign="top">
-						Koristite lokalizaciju samo podržanu Xlib-om.
-					</entry>
+					<entry valign="top">Nepodržana lokalizacija</entry>
+					<entry valign="top">Koristite lokalizaciju samo podržanu Xlib-om.</entry>
 				</row>
 				<row>
+					<entry valign="top">Neuspjeli instalacijski blokovi budućih radnji u Synapticu</entry>
 					<entry valign="top">
-						Neuspjeli instalacijski blokovi budućih radnji u Synapticu
-					</entry>
-					<entry valign="top">
-						<para>
-							Pod nekim rijetkim okolnostima trenutna instalacija ili uklanjanje paketa mogu biti neuspješni. 
-							Kao posljedica sve odabrane promjene su isto tako prekinute. 
-						</para>
-						<para>
-							&app; zahtijeva 
-							čisto okruženje bez napola instaliranih paketa 
-							za obavljanje dodatnih promjena. Ali trenutno ne postoji način za nastavak
-							prekinutih instalacija sa &app;.
-						</para>
-						<para>
-							Kako bi popravili ovu situaciju upišite sljedeću naredbu u terminal, zatim pritisnite tipku
-							<keycap>Return</keycap>:
-						</para>
-						<command>
-							apt-get install -f
-						</command>
+						<para>Pod nekim rijetkim okolnostima trenutna instalacija ili uklanjanje paketa mogu biti neuspješni. Kao posljedica sve odabrane promjene su isto tako prekinute.</para>
+						<para><application>Synaptic upravitelj paketima</application> zahtijeva čisto okruženje bez napola instaliranih paketa prekinutih instalacija sa <application>Synaptic upraviteljem paketima</application> za obavljanje dodatnih promjena. Ali trenutno ne postoji način za nastavak s napola prekinutim instalacijama.</para>
+						<para>Kako bi popravili ovu situaciju upišite sljedeću naredbu u terminal, zatim pritisnite tipku <keycap>Return</keycap>:</para>
+						<command>apt-get install -f</command>
 					</entry>
 				</row>
 			</tbody>
@@ -2658,9 +1714,7 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 <sect1 id="synaptic-shortcuts">
 	<title>Prečaci tipkovnice</title>
-	<para>
-		Popis svih općih prečaca u &app;:
-	</para>
+	<para>Popis svih općih prečaca u <application>Synaptic upravitelju paketima</application>:</para>
 	<informaltable frame="none" id="synaptic-shortcuts-table">
 	
 		<tgroup cols="2" colsep="0" rowsep="0">
@@ -2668,124 +1722,92 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 			<colspec colname="COLSPEC1" colwidth="70*"/>
 			<tbody>
 				<row>
-					<entry valign="top">
-						Osvježi popis poznatih paketa
-					</entry>
+					<entry valign="top">Osvježi popis poznatih paketa</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Otvori dijalog pretrage paketa
-					</entry>
+					<entry valign="top">Otvori dijalog pretrage paketa</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Otvori daijalog svojstva za odabrani paket
-					</entry>
+					<entry valign="top">Otvori daijalog svojstva za odabrani paket</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi odabrane pakete za instalaciju
-					</entry>
+					<entry valign="top">Odaberi odabrane pakete za instalaciju</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi odabrane pakete za nadogradnju
-					</entry>
+					<entry valign="top">Odaberi odabrane pakete za nadogradnju</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>U</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi odabrane pakete za uklanjanje
-					</entry>
+					<entry valign="top">Odaberi odabrane pakete za uklanjanje</entry>
 					<entry valign="top">
 						<keycap>Delete</keycap>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi odabrane pakete za potpuno uklanjanje (samo Debian)
-					</entry>
+					<entry valign="top">Odaberi odabrane pakete za potpuno uklanjanje (samo Debian)</entry>
 					<entry valign="top">
 						<keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Ukloni sve promjene sa odabranih paketa
-					</entry>
+					<entry valign="top">Ukloni sve promjene sa odabranih paketa</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi sve moguće nadogradnje
-					</entry>
+					<entry valign="top">Odaberi sve moguće nadogradnje</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Odaberi instalaciju određene inačice paketa
-					</entry>
+					<entry valign="top">Odaberi instalaciju određene inačice paketa</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>E</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Vrati posljednje promjene stanja za paket i za
-						potrebne zavisnosti
-					</entry>
+					<entry valign="top">Vrati posljednje promjene stanja za paket i za potrebne zavisnosti</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Vrati posljednje vraćene promjene stanja za paket
-						i za potrebne zavisnosti
-					</entry>
+					<entry valign="top">Vrati posljednje vraćene promjene stanja za paket i za potrebne zavisnosti</entry>
 					<entry valign="top">
 						<keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap>
 						<keycap>Z</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Primijeni sve odabrano promjene
-					</entry>
+					<entry valign="top">Primijeni sve odabrano promjene</entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Zatvori &app;
-					</entry>
+					<entry valign="top">Zatvori <application>Synaptic upravitelja paketima</application></entry>
 					<entry valign="top">
 						<keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo>
 					</entry>
 				</row>
 				<row>
-					<entry valign="top">
-						Prikaži priručnik &app;
-					</entry>
+					<entry valign="top">Prikaži priručnik <application>Synaptic upravitelja paketima</application></entry>
 					<entry valign="top">
 						<keycap>F1</keycap>
 					</entry>
@@ -2797,27 +1819,10 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 
 
 <sect1 id="myapp-about"> 
-	<title>O &app;</title> 
-	<para> 
-		Izvorni autor &app; je Alfredo K. Kojima (<email>kojima@windowmaker.org</email>)
-		a sada ga održava Michael Vogt (<email>mvo@debian.org</email>) i
-		Gustavo Niemeyer (<email>niemeyer@conectiva.com</email>).
-		Kako bi dobili više informacija o &app;, posjetite 
-		<ulink url="http://www.nongnu.org/synaptic" type="http">Synaptic web stranicu</ulink>.
-	</para>
-	<para>
-		Za prijavak greške ili prijedloga za &app; 
-		ili ovog priručnika, koristite sustav prijave grešaka na <ulink 
-		url="http://www.nongnu.org/synaptic" type="http">Synaptic web stranici</ulink>, kontaktirajte 
-		nas na mailing listi <email>synaptic@nongnu.org</email> ili se pridružite IRC kanalu 
-		#synaptic na irc.freenode.org.
-	</para>
-	<para> 
-		Ovaj program je distribuiran pod uvjetima GNU
-		Opće Javne Licence objavljene od strane Fundacije slobodnog softvera; ili inačice 2 licence, 
-		ili (po vašem mišljenju) novije inačice. Kopija ove licence može se pronaći u
-		, datoteci uključenoj u izvornom kôdu ovog programa.
-	</para>
+	<title>O <application>Synaptic upravitelju paketima</application></title> 
+	<para>Izvorni autor <application>Synaptic upravitelja paketima</application> je Alfredo K. Kojima (<email>kojima@windowmaker.org</email>) a sada ga održava Michael Vogt (<email>mvo@debian.org</email>) i Gustavo Niemeyer (<email>niemeyer@conectiva.com</email>). Kako bi dobili više informacija o <application>Synaptic upravitelju paketima</application>, posjetite <ulink url="http://www.nongnu.org/synaptic" type="http">Synaptic web stranicu</ulink>.</para>
+	<para>Za prijavak greške ili prijedloga za <application>Synaptic upravitelja paketima</application> ili ovog priručnika, koristite sustav prijave grešaka na <ulink url="http://www.nongnu.org/synaptic" type="http">Synaptic web stranici</ulink>, kontaktirajte nas na mailing listi <email>synaptic@nongnu.org</email> ili se pridružite IRC kanalu #synaptic na irc.freenode.org.</para>
+	<para>Ovaj program je distribuiran pod uvjetima GNU Opće Javne Licence objavljene od strane Fundacije slobodnog softvera; ili inačice 2 licence, ili (po vašem mišljenju) novije inačice. Kopija ove licence može se pronaći u datoteci uključenoj u izvornom kôdu ovog programa.</para>
 </sect1> 
 
 <!-- Appendix with GPL -->
