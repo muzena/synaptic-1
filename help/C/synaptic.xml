@@ -411,16 +411,6 @@
 			</varlistentry>
 			<varlistentry>
 				<term>
-					Quick filter
-				</term>
-				<listitem>
-					<para>
-						Quick package search.
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>
 					Properties
 				</term>
 				<listitem>
@@ -435,7 +425,7 @@
 				</term>
 				<listitem>
 					<para>
-						Open detailed package search dialog.
+						Open the package search dialog.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -1656,7 +1646,7 @@ NEEDS A REWRITE - SO DISABLED FOR 0.53
 				</para>
 				<para>
 					This step can be repeated. The maxmium number of undo operations can be set
-					in the preferences. FIX link
+					in the <menuchoice><guimenu>Settings</guimenu><guimenuitem>Preferences</guimenuitem><guimenuitem>Number of undo operations:</guimenuitem></menuchoice>
 				</para>
 			</listitem>
 		</varlistentry>
