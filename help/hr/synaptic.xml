@@ -2,8 +2,8 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY legal SYSTEM "gpl.xml">
 <!ENTITY appversion "0.53">
-<!ENTITY app "<application>Synaptic upravitelj paketima</application>">
-<!ENTITY manrevision "0.1">
+<!ENTITY app "<application>Synaptic Package Manager</application>">
+<!ENTITY manrevision "0.1.2">
 <!ENTITY date "Srpanj 2019">
 ]>
 <!-- =============Document Header ============================= -->
@@ -11,21 +11,21 @@
 <!-- please do not change the id; for translations, change lang to -->
 <!-- appropriate code -->
 <articleinfo> 
-<title>&app; Priručnik   &manrevision;</title>       
+<title><application>Synaptic upravitelj paketima</application> Priručnik V0.1.2</title>       
 
 <copyright> 
 	<year>2003,2004</year> 
 	<holder>Sebastian Heinlein</holder> 
 </copyright>
 
-	<!-- translators: uncomment this:
+	<!-- translators: uncomment this:-->
 
 <copyright>
-	<year>2016</year>
-	<holder>gogo <email>trebelnik2@gmail.com</email> (hrvatski prijevod)</holder>
+	<year>2016,2019</year>
+	<holder>gogo <email>linux.hr@protonmail.com</email> (hrvatski prijevod)</holder>
 </copyright>
 
--->
+
 
 <authorgroup> 
 	<author> 
